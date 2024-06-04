@@ -24,7 +24,8 @@ $inserir = mysqli_query($conexao, $sql);
 </div>
 
 <div id="cadastrarBtn">
-<a href="../index.php" role="button" class="btn btn-sm btn-primary">Cadastrar novo item</a>
+<a href="../index.php" class="btn btn-sm btn-primary">Voltar</a>
+<a href="../index.php" role="button" class="btn btn-sm btn-success">Cadastrar novo item</a>
 </div>
 
 </div>

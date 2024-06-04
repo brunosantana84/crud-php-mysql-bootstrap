@@ -1,6 +1,13 @@
 <?php
 include 'conexao.php';
+
+$id = $_GET['id'];
+
+$sql = "DELETE FROM `produtos` WHERE id_produto = $id";
+$deletar = mysqli_query($conexao, $sql);
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,9 +26,7 @@ include 'conexao.php';
     
     <div class="container" id="">
         <h3>Lista de Produtos</h3>
-        <div id="cadastrarBtn">
-        <a href="../index.php" class="btn btn-sm btn-primary">Voltar</a>
-        </div>
+
         <table class="table">
             <thead>
               <tr>
