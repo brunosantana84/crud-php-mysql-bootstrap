@@ -1,3 +1,7 @@
+<?php
+include 'conexao.php';
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -34,9 +38,20 @@
             <label>Categoria</label>
             <select class="form-select" name="categoria">
                 <option selected>Selecione</option>
-                <option value="Periféricos">Periféricos</option>
-                <option value="Software">Software</option>
-                <option value="Celulares">Celulares</option>
+
+                <?php
+                
+                $sql = "SELECT * FROM `categoria`";
+                $busca = mysqli_query($conexao, $sql);
+
+                while ($array = mysqli_fetch_array($busca)) {
+                    $id_categoria = $array['id_categoria'];
+                    $categoria = $array['categoria'];
+                ?>
+                <option value="<?php echo $categoria ?>"><?php echo $categoria; ?></option>
+                <?php 
+                }
+                ?>
             </select>
         </div>
 
